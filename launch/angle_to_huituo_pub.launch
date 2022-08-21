@@ -1,0 +1,3 @@
+<launch>
+    <node pkg = "ganzhi3"     type="angle_to_huituo"       name = "angle_to_huituo_pub"     output = "screen" /> 
+</launch>
