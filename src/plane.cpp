@@ -15,7 +15,7 @@
 #include <pcl_conversions/pcl_conversions.h>
 #include <pcl/PCLPointCloud2.h>
 #include "ganzhi3/plane.h"
-#include "/home/zh/catkin_ws/src/ganzhi3/include/ganzhi3/RsPointXYZIRT.h" //定义了速腾的点云结构，头文件放在devel/include中
+#include "../include/ganzhi3/RsPointXYZIRT.h" //定义了速腾的点云结构，头文件放在devel/include中
 
 using namespace std;
 
@@ -55,7 +55,7 @@ void cloud_cb(const sensor_msgs::PointCloud2ConstPtr &cloud_msg)
 		//分割方法：随机采样法
 		seg.setMethodType(pcl::SAC_RANSAC);
 		//设置误差容忍范围，也就是阈值
-		seg.setDistanceThreshold(0.03);
+		seg.setDistanceThreshold(0.01);
 		// 设置最大迭代次数
 		seg.setMaxIterations(500);
 		//输入点云
@@ -70,7 +70,7 @@ void cloud_cb(const sensor_msgs::PointCloud2ConstPtr &cloud_msg)
 		plane.d = coefficients->values[3]; //赋值给msg里面的平面参数
 
 		plane.jiajiao = atan(plane.b / plane.a);
-		cout << "theta = " << 180 * atan(plane.b / plane.a) / pi << "度" << endl; // theta
+		cout << "theta = " << 180 * atan(plane.b / plane.a) / pi << endl; // theta
 	}
 }
 
@@ -89,5 +89,4 @@ int main(int argc, char **argv)
 		ros::spinOnce();
 		loop_rate.sleep();
 	}
-	return 0;
 }

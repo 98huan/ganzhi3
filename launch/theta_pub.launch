@@ -5,5 +5,5 @@
     <!-- <node pkg = "ganzhi3"     type="scanID"       name = "lidar_pub_center"     output = "screen" />  -->
     <node pkg = "ganzhi3"     type="perception"       name = "total_perception"                  output = "screen" /> 
 
-    <node pkg="rviz"                type="rviz"             name="rviz"         args="-d /home/zh/catkin_ws/src/ganzhi3/rviz/lidar_camera.rviz"      required="true" />
+    <node pkg="rviz"                type="rviz"             name="rviz"         args="-d $(find ganzhi3)/rviz/lidar_camera.rviz"      required="true" />
 </launch>

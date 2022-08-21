@@ -163,21 +163,20 @@ target_link_libraries(scanID
   ${catkin_LIBRARIES}
 )
 
-add_executable(transform src/transform.cpp)
-target_link_libraries(transform
-  ${catkin_LIBRARIES}
-)
-
 add_executable(perception src/perception.cpp)
 target_link_libraries(perception
-  ${catkin_LIBRARIES}
+${catkin_LIBRARIES}
 )
 
 add_executable(angle_to_huituo src/angle_to_huituo.cpp)
 target_link_libraries(angle_to_huituo
-  ${catkin_LIBRARIES}
+${catkin_LIBRARIES}
 )
 
+add_executable(transform src/transform.cpp)
+target_link_libraries(transform
+  ${catkin_LIBRARIES}
+)
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
 ## target back to the shorter version for ease of user use
