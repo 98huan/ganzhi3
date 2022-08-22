@@ -1,7 +1,7 @@
 #include <iostream>
 #include <ros/ros.h>
 #include <geometry_msgs/PoseStamped.h>
-#include "/home/zh/catkin_ws/src/ganzhi3/include/ganzhi3/eul2quat.h"
+#include "../include/ganzhi3/eul2quat.h"
 #include "ganzhi3/angle_to_huituo.h"
 using namespace std;
 /*
