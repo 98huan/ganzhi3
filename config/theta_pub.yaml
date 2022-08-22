@@ -9,3 +9,7 @@ big_box_x: 2.0  # 大搜索框x长度的一半
 big_box_y: 0.5  # 大搜索框y长度的一半
 big_box_z: 0.4  # 大搜索框z长度的一半
 RING: 80  # 激光雷达线束
+search_center_file: "/home/zh/catkin_ws/src/ganzhi3/result/search_center.txt"
+search_center_file: "/home/zh/catkin_ws/src/ganzhi3/result/search_center.txt"
+eul_angle_file: "/home/zh/catkin_ws/src/ganzhi3/result/eul_angle.txt"
+guagou_in_houzhou_file: "/home/zh/catkin_ws/src/ganzhi3/result/guagou_in_houzhou.txt"
