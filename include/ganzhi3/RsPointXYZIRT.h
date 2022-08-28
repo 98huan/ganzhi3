@@ -1,4 +1,3 @@
-// 我们用的是devel/include里的，这里只做一个备份
 #ifndef RSPOINTXYZIRT_H
 #define RSPOINTXYZIRT_H
 

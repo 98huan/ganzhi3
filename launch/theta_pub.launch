@@ -1,9 +1,16 @@
 <launch>
-    <rosparam file="$(find ganzhi3)/config/theta_pub.yaml" command="load" />
-    <node pkg = "ganzhi3" type="kdtree"       name = "points_nihe"                  output = "screen" /> 
-    <node pkg = "ganzhi3" type="plane"         name = "nihe_plane"                  output = "screen" /> 
-    <node pkg = "ganzhi3" type="scanID"       name = "lidar_pub_center"     output = "screen" /> 
-    <!-- <node pkg = "ganzhi3" type="perception"  name = "total_perception" output = "screen" /> -->
+    <rosparam file = "$(find ganzhi3)/config/theta_pub.yaml" command="load" />
+    <param name = "search_center_file"  value = "$(find ganzhi3)/result/search_center.txt" />
+    <param name = "eul_angle_file"  value =  "$(find ganzhi3)/result/eul_angle.txt" />
+    <param name = "guagou_in_houzhou_file"  value = "$(find ganzhi3)/result/guagou_in_houzhou.txt" />
+    
+    <!-- 方式一：三个节点 -->
+    <!-- <node pkg = "ganzhi3" type="kdtree"       name = "points_nihe"                  output = "screen" />
+    <node pkg = "ganzhi3" type="plane"         name = "nihe_plane"                  output = "screen" />
+    <node pkg = "ganzhi3" type="scanID"       name = "lidar_pub_center"     output = "screen" /> -->
+    
+    <!-- 方式二：一个合并的节点 -->
+    <node pkg = "ganzhi3" type="perception"  name = "total_perception" output = "screen" />
 
     <node pkg="rviz" type="rviz" name="rviz" args="-d $(find ganzhi3)/rviz/lidar_camera.rviz" required="true" />
 </launch>

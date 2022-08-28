@@ -97,10 +97,12 @@ int main(int argc, char **argv)
         nh.param<double> ("big_box_y", big_box_y, 0.5);
         nh.param<double> ("big_box_z", big_box_z, 0.4);
         nh.param<int> ("RING", RING, 80);
-        nh.param<string> ("search_center_file", search_center_file, "/home/zh/catkin_ws/src/ganzhi3/result/search_center.txt");
-        nh.param<string> ("eul_angle_file", eul_angle_file, "/home/zh/catkin_ws/src/ganzhi3/result/eul_angle.txt");
-        nh.param<string> ("guagou_in_houzhou_file", guagou_in_houzhou_file, "/home/zh/catkin_ws/src/ganzhi3/result/guagou_in_houzhou.txt");         
-
+        // nh.param<string> ("search_center_file", search_center_file, "/home/zh/catkin_ws/src/ganzhi3/result/search_center.txt");
+        // nh.param<string> ("eul_angle_file", eul_angle_file, "/home/zh/catkin_ws/src/ganzhi3/result/eul_angle.txt");
+        // nh.param<string> ("guagou_in_houzhou_file", guagou_in_houzhou_file, "/home/zh/catkin_ws/src/ganzhi3/result/guagou_in_houzhou.txt");         
+        nh.getParam("search_center_file", search_center_file);  //从launch文件获取外参初值
+        nh.getParam("eul_angle_file", eul_angle_file);   
+        nh.getParam("guagou_in_houzhou_file", guagou_in_houzhou_file);                
         // 订阅相机发布的二维码点坐标
         ros::Subscriber camera_sub_ = nh.subscribe<geometry_msgs::PoseStamped>("/aruco_single/pose", 10, camera_sub_cb);
         // 订阅雷达原始点云,发布大小邻域搜索点云
